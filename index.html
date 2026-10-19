@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>留一手：人生的路口</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/events.css">
+<link rel="stylesheet" href="css/ending.css">
+</head>
+<body>
+<div class="sun" aria-hidden="true"></div>
+<div id="app"></div>
+
+<!-- 載入順序很重要：資料 → 引擎 → 介面。全部是傳統 script，不需要伺服器，可直接放 GitHub Pages。 -->
+<script src="data/config.js"></script>
+<script src="data/skills.js"></script>
+<script src="data/endings.js"></script>
+<script src="data/achievements.js"></script>
+<script src="data/achievements/a1_study_pro.js"></script>
+<script src="data/achievements/a2_career_skill.js"></script>
+<script src="data/achievements/a3_life.js"></script>
+<script src="data/achievements/a4_world.js"></script>
+<script src="data/achievements/a5_more.js"></script>
+<script src="data/ratings.js"></script>
+<script src="data/questions/q0_shared.js"></script>
+<script src="data/questions/q1_childhood.js"></script>
+<script src="data/questions/q2_teen.js"></script>
+<script src="data/questions/q3_youth.js"></script>
+<script src="data/questions/q4_early.js"></script>
+<script src="data/questions/q5_build.js"></script>
+<script src="data/questions/q6_mid.js"></script>
+<script src="data/questions/q7_elder.js"></script>
+<script src="data/questions/q8_plain.js"></script>
+<script src="data/questions/q9_roles.js"></script>
+<script src="data/questions/q10_skills.js"></script>
+<script src="data/questions/q11_vocational.js"></script>
+<script src="data/questions/q12_sectors.js"></script>
+<script src="data/questions/q13_life.js"></script>
+<script src="data/questions/q14_elder.js"></script>
+<script src="data/questions/q15_young.js"></script>
+<script src="data/questions/q16_early_more.js"></script>
+<script src="data/questions/q17_transition.js"></script>
+<script src="data/questions/q18_interest.js"></script>
+<script src="data/questions/q19_majors.js"></script>
+<script src="data/questions/q20_college.js"></script>
+<script src="data/questions/q21_after.js"></script>
+<script src="data/questions/q22_careers_a.js"></script>
+<script src="data/questions/q23_careers_b.js"></script>
+<script src="data/questions/q24_elder_major.js"></script>
+<script src="data/questions/q25_marriage.js"></script>
+<script src="data/questions/q26_hidden.js"></script>
+<script src="data/questions/q27_flex.js"></script>
+<script src="data/questions/q28_gates.js"></script>
+<script src="data/questions/q29_context.js"></script>
+<script src="data/events/e1_childhood.js"></script>
+<script src="data/events/e2_teen.js"></script>
+<script src="data/events/e3_youth.js"></script>
+<script src="data/events/e4_early.js"></script>
+<script src="data/events/e5_build.js"></script>
+<script src="data/events/e6_mid.js"></script>
+<script src="data/events/e7_elder.js"></script>
+<script src="data/events/e8_flex.js"></script>
+<script src="js/engine/rng.js"></script>
+<script src="js/engine/state.js"></script>
+<script src="js/engine/template.js"></script>
+<script src="js/engine/skills.js"></script>
+<script src="js/engine/select.js"></script>
+<script src="js/engine/events.js"></script>
+<script src="js/engine/engine.js"></script>
+<script src="js/engine/grading.js"></script>
+<script src="js/engine/collection.js"></script>
+<script src="js/ui/helpers.js"></script>
+<script src="js/ui/screens.js"></script>
+<script src="js/ui/gallery.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

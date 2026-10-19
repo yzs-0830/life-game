@@ -1,0 +1,17 @@
+/* 命運卡：先顯示卡背，翻開後出現事件內容。環境卡與個人卡配色不同。 */
+.fate { text-align: center; padding: 8px 0 4px; }
+.fate-card { width: min(320px, 100%); margin: 14px auto 18px; aspect-ratio: 3 / 4.2; border-radius: 18px; padding: 22px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px;
+  color: #fff; box-shadow: 0 14px 34px rgba(20, 30, 60, .28); }
+.fate-card.personal { background: linear-gradient(160deg, #6a45b8, #2f2a7a); }
+.fate-card.env { background: linear-gradient(160deg, #c0443a, #6e1f3a); }
+.fate-card .kind { font-size: .9rem; letter-spacing: .3em; opacity: .85; }
+.fate-card .mark { font-family: var(--serif); font-size: 4.4rem; line-height: 1; }
+.fate-card h2 { font-size: 1.3rem; }
+.fate-card.open { aspect-ratio: auto; text-align: left; align-items: stretch; width: 100%; animation: flipIn .6s ease; }
+.fate-card.open p { margin: 0; color: rgba(255,255,255,.92); }
+@keyframes flipIn { from { transform: perspective(900px) rotateY(90deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.fate-result { text-align: left; margin-top: 4px; }
+.fate-result .chip.up { background: #ecf8f2; }
+.fate-result .chip.down { background: #fdeeec; }
+.fate-note { color: var(--ink-soft); font-size: .92rem; margin: 0 0 4px; }

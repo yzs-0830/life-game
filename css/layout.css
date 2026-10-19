@@ -1,0 +1,34 @@
+/* 版面：三欄（人生面板 ｜ 場景 ｜ 技能與經歷），手機版改為單欄 */
+.game { display: grid; grid-template-columns: 230px minmax(0, 1fr) 310px; gap: 16px; align-items: start; }
+.side-left, .side-right { position: sticky; top: 14px; max-height: calc(100vh - 28px); overflow-y: auto; }
+.stage { min-height: 460px; }
+
+.start { max-width: 700px; margin: 5vh auto 0; text-align: center; }
+.start h1 { font-size: 2.4rem; margin-bottom: 8px; }
+.start .lead { color: var(--ink-soft); margin: 0 0 20px; }
+.start .rules { text-align: left; margin: 0 0 22px; padding-left: 1.2em; }
+.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 22px; text-align: left; }
+
+.stage-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.age { font-family: var(--serif); color: var(--ink-soft); }
+.scene { font-size: 1.04rem; margin: 10px 0 18px; }
+.opts { display: grid; gap: 10px; }
+.actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+
+@media (max-width: 1020px) {
+  .game { grid-template-columns: minmax(0, 1fr) 300px; }
+  .stage { grid-column: 1; grid-row: 1; }
+  .side-right { grid-column: 2; grid-row: 1; }
+  .side-left { grid-column: 1 / -1; grid-row: 2; position: static; max-height: none; }
+}
+@media (max-width: 760px) {
+  .game { grid-template-columns: 1fr; }
+  .side-right { grid-column: 1; grid-row: auto; order: 1; position: static; max-height: none; }
+  .stage { grid-column: 1; grid-row: auto; order: 2; }
+  .side-left { grid-column: 1; grid-row: auto; order: 3; }
+  .side-right .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+  .modes { grid-template-columns: 1fr; }
+  .start h1 { font-size: 1.9rem; }
+  .panel { padding: 16px 14px; }
+  .sun { width: 60px; height: 60px; }
+}
