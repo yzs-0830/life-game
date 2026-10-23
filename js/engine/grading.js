@@ -76,7 +76,9 @@
     const ks = LG.data.config.keys;
     const penalty = ks.filter(k => st.s[k] < 25).length * 5;
     const ending = LG.data.endings.find(e => LG.when(st, e.when));
-    const score = LG.avg(st) - penalty + (ending.bonus || 0);
+    /* 稱號取第一個符合的；加分取所有符合稱號中最高者，避免排序讓變好反而扣分 */
+    const bonus = LG.data.endings.reduce((m, e) => (e.bonus || 0) > m && LG.when(st, e.when) ? e.bonus : m, 0);
+    const score = LG.avg(st) - penalty + bonus;
     const T = LG.data.config.gradeCut;
     const grade = score >= T.S ? 'S' : score >= T.A ? 'A' : score >= T.B ? 'B' : 'C';
     const flexText = LG.data.flexComments.find(c => st.s.flex >= c.min).text;

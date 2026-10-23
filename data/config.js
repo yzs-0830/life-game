@@ -13,8 +13,10 @@ LG.data.config = {
   kindGain: { focus: 1.5, flex: 0.75 },
   /* 彈性的消長：連續專精與長期忙碌會讓路越走越窄；連續用心保留選擇權則慢慢回升（老年不套用） */
   flexDrift: { focusAt: 4, busyAt: 6, floor: 40, flexAt: 3, flexHard: 6, upAbove: 80 },
+  /* 老年的家庭紅利：每有一項（已婚、有孩子、有孫子），老年題的人際與幸福正向回報 +10% */
+  elderFamily: { flags: ['married', 'kids', 'grandkids'], per: 0.1, keys: ['social', 'joy'] },
   /* 綜合分數的等級門檻 */
-  gradeCut: { S: 70, A: 61, B: 52 },
+  gradeCut: { S: 71, A: 62, B: 54 },
   /* 進入年齡段時的自然變化：歲月的痕跡 */
   bandDrift: {
     build: { health: -2 },
@@ -132,6 +134,25 @@ LG.data.config = {
     pe: ['技師', '取得專業技師資格，能簽署工程文件，也承擔責任。'],
     teacher: ['教師', '通過教師甄試，站上講台，工作穩定，也要面對教育現場的各種挑戰。'],
     med_owner: ['開業醫師', '自己開設診所，收入較高，也要承擔經營與風險。']
+  },
+
+  /* 專業身分與資格的長期回報（效果格式同技能：gain 正向成長倍率、floor 數值下限），鍵可以是 profession 或旗標。
+     長年的訓練與考試要換到相應的收入或地位；只在持有該身分或旗標時生效。 */
+  profEffects: {
+    med_resident: { gain: { wealth: 1.25 } },
+    med_attending: { floor: { wealth: 40 }, gain: { wealth: 1.4 } },
+    med_owner: { floor: { wealth: 45 }, gain: { wealth: 1.4 } },
+    lawyer: { floor: { wealth: 35 }, gain: { wealth: 1.3 } },
+    cpa: { floor: { wealth: 35 }, gain: { wealth: 1.25 } },
+    judge: { floor: { wealth: 35, social: 45 }, gain: { wealth: 1.15 } },
+    pe: { floor: { wealth: 30 }, gain: { wealth: 1.2 } },
+    teacher: { gain: { wealth: 1.5, social: 1.15 } },
+    civil: { gain: { wealth: 1.2, social: 1.1 } },
+    /* 家庭：婚姻與孩子讓人際與幸福的累積更快（成長倍率，不設下限，避免托高被動策略） */
+    married: { gain: { social: 1.15, joy: 1.2, wealth: 1.1 } },
+    kids: { gain: { social: 1.15, joy: 1.15 } },
+    grandkids: { gain: { social: 1.1, joy: 1.2 } },
+    professor: { floor: { knowledge: 70, wealth: 52 }, gain: { wealth: 1.4, social: 1.15 } }
   },
 
   /* 累積計數（隱藏）：busy 代表把時間投入工作與課業的程度，love 代表感情與社交的投入 */

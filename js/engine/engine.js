@@ -6,7 +6,13 @@
   /* 套用一個結果片段 {fx,set,unset,force,route,skill}，回傳所有數值的實際變化 */
   LG.applyOutcome = function (st, part) {
     const before = Object.assign({}, st.s);
-    if (part.fx) LG.applyFx(st, part.fx);
+    let fx = part.fx;
+    const EF = LG.data.config.elderFamily;
+    if (fx && EF && st.curBand === 'elder') {          // 老年的家庭紅利
+      const m = 1 + EF.per * EF.flags.filter(f => st.flags[f]).length;
+      if (m > 1) { fx = Object.assign({}, fx); EF.keys.forEach(k => { if (fx[k] > 0) fx[k] = fx[k] * m; }); }
+    }
+    if (fx) LG.applyFx(st, fx);
     (part.set || []).forEach(f => { if (!st.flags[f] && st.flagAge[f] == null) st.flagAge[f] = LG.curAge(st); st.flags[f] = true; });
     (part.unset || []).forEach(f => { delete st.flags[f]; });
     if (part.role) { st.role = part.role; if (!part.sector && part.role !== 'worker') st.sector = null; }

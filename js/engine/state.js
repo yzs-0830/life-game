@@ -6,7 +6,7 @@
   LG.clamp = clamp;
 
   /* 加權平均：財富較重，彈性較輕（反映社會價值觀，也避免全選彈性過強） */
-  const W = { knowledge: 1, health: 1, wealth: 1.6, social: 1, joy: 1, flex: 0.45 };
+  const W = { knowledge: 1, health: 1, wealth: 1.3, social: 1, joy: 1, flex: 0.45 };
   LG.avg = function (st) {
     const ks = cfg().keys;
     return ks.reduce((t, k) => t + st.s[k] * W[k], 0) / ks.reduce((t, k) => t + W[k], 0);

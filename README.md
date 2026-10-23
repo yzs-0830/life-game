@@ -42,6 +42,9 @@ node tools/validate.js        # 檢查資料格式與引用
 node tools/simulate.js 5000   # 隨機模擬 5000 局，檢查流程、事件規則、身分合理性與結局分布
 node tools/coverage.js        # 檢查各身分在各年齡段的題庫是否足夠
 node tools/audit.js 6000      # 檢查文案與身分是否一致（不會有教授被主管問升遷、單身的人被孩子問問題）
+node tools/monotone.js 3000   # 單調性：任何一項數值變高，分數都不會變低
+node tools/routes.js 24 10    # 各路線的理論天花板表（平行執行 optimize.js，約 15–25 分鐘），可加 --routes=med,law 只跑部分
+node tools/optimize.js 24 6 0.3 --goal=med   # 單一路線的最強人生搜尋（貪心＋蒙地卡羅），印出完整的選擇紀錄
 ```
 `validate.js` 會用 `tools/lint.js` 做靜態的文字一致性檢查，`simulate.js` 也會在模擬時檢查每一段顯示出來的文字。想在本機試玩，可以直接開 `index.html`，或在專案資料夾執行 `python3 -m http.server 8765` 後開 `http://localhost:8765`。
 詳細的階段與檢核項目見 [docs/PLAN.md](docs/PLAN.md)，資料格式見 [docs/SCHEMA.md](docs/SCHEMA.md)。

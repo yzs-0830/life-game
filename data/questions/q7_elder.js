@@ -31,16 +31,16 @@ LG.data.questions.push(
   options: [
     { label: '固定每週打電話，並主動關心他們的生活', kind: 'safe',
       roll: roll7('romance', { base: 0.55, by: { social: 0.004 }, ctr: { busy: -0.05 },
-        win: { fx: { social: 7, joy: 8 }, set: ['grandkids'], desc: '孩子感受到你的關心，也主動帶著伴侶回家。不久之後，你抱著剛出生的孫子。' },
-        lose: { fx: { social: 2, joy: 1 }, desc: '孩子有自己的生活，你們的聯絡不算多，但你仍默默關心他們。' } }) },
+        win: { fx: { social: 8, joy: 9 }, set: ['grandkids'], desc: '孩子感受到你的關心，也主動帶著伴侶回家。不久之後，你抱著剛出生的孫子。' },
+        lose: { fx: { social: 3, joy: 2 }, desc: '孩子有自己的生活，你們的聯絡不算多，但你仍默默關心他們。' } }) },
     { label: '提供經濟支持，幫他們買房或創業', kind: 'focus',
-      fx: { wealth: -10, social: 5, joy: 3 }, set: ['grandkids'],
+      fx: { wealth: -6, social: 5, joy: 3 }, set: ['grandkids'],
       desc: '你的資助讓孩子安定下來，也為你的家族帶來了新成員。' },
     { label: '尊重他們的生活，保持適當距離', kind: 'safe',
       fx: { joy: 2, social: -1 },
       desc: '你不想成為負擔，也慢慢習慣自己的日子。' },
     { label: '搬到孩子附近居住，方便互相照應', kind: 'flex',
-      fx: { social: 6, joy: 5, wealth: -4, flex: 3 }, set: ['grandkids'],
+      fx: { social: 8, joy: 6, wealth: -3, flex: 3 }, set: ['grandkids'],
       desc: '你每天都能看見孩子，並在需要的時候幫上忙。' }
   ]
 },
@@ -50,7 +50,7 @@ LG.data.questions.push(
   scene: '孫子開始學走路，也開始叫你「爺爺」或「奶奶」。你的孩子們工作忙，常常需要你幫忙，你也想多陪陪孫子。',
   options: [
     { label: '每天幫忙帶孫子，讓孩子們安心工作', kind: 'safe',
-      fx: { social: 6, joy: 8, health: -3 },
+      fx: { social: 7, joy: 9, health: -3 },
       desc: '你的日子很忙碌，卻因為孫子的笑聲而覺得很值得。' },
     { label: '固定週末陪孩子玩，保留平日的自由', kind: 'flex',
       fx: { social: 5, joy: 6, health: 1, flex: 2 },

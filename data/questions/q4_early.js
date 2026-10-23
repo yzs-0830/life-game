@@ -139,9 +139,9 @@ LG.data.questions.push(
   options: [
     { label: '辭職創業，把全部身家投進去', kind: 'focus',
       roll: roll4('biz', { base: 0.3, flags: { startup_job: 0.08, coding: 0.05, startup_idea: 0.1, intern: 0.03 },
-        win: { fx: { wealth: 12, joy: 6, flex: 3 }, set: ['founder'], sector: 'founder', route: 'startup', desc: '你的公司找到了商業模式，開始有穩定的營收。' },
-        lose: { fx: { wealth: -12, joy: -6, health: -3 }, set: ['side_biz'], desc: '公司撐了兩年，最後因為資金不足收掉了。你賠了不少錢，也學到了很多。' } }),
-      add: { busy: 1 } },
+        win: { fx: { wealth: 9, joy: 6, flex: 3 }, set: ['founder'], sector: 'founder', route: 'startup', desc: '你的公司找到了商業模式，開始有穩定的營收。' },
+        lose: { fx: { wealth: -14, joy: -7, health: -5 }, set: ['side_biz'], desc: '公司撐了兩年，最後因為資金不足收掉了。你賠了不少錢，也學到了很多。' } }),
+      add: { busy: 2 } },
     { label: '先在下班後做副業，驗證市場再決定', kind: 'flex',
       fx: { wealth: 4, flex: 6, knowledge: 3 }, set: ['side_biz'], add: { busy: 1 }, skill: { business: 1 },
       desc: '你的副業有了第一批客戶，也不必承擔全部的風險。' },
@@ -222,8 +222,8 @@ LG.data.questions.push(
   options: [
     { label: '求婚或登記結婚', kind: 'safe',
       roll: { base: 0.8, ctr: { busy: -0.05 },
-        win: { fx: { social: 8, joy: 8, wealth: -3 }, set: ['married'], desc: '你們結婚了，雙方的家人都很高興。' },
-        lose: { fx: { joy: -8, social: -3 }, unset: ['partner'], set: ['single_choice'], desc: '對方說，這幾年你總是在忙，他需要的是一個能一起生活的人。你們分手了。' } } },
+        win: { fx: { social: 9, joy: 10, wealth: -2 }, set: ['married'], desc: '你們結婚了，雙方的家人都很高興。' },
+        lose: { fx: { joy: -6, social: -2 }, unset: ['partner'], set: ['single_choice'], desc: '對方說，這幾年你總是在忙，他需要的是一個能一起生活的人。你們分手了。' } } },
     { label: '先同居，觀察彼此的生活習慣', kind: 'flex',
       fx: { social: 3, joy: 3, flex: 3 }, add: { love: 1 }, set: ['partner_stable'],
       desc: '同居讓你更了解對方，也讓這段感情更穩定。' },

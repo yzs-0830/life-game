@@ -19,6 +19,13 @@
         if (e.flexCap) eff.flexCap += e.flexCap;
       }
     }
+    const PE = LG.data.config.profEffects || {};      // 專業身分與資格（旗標）的長期回報
+    [st.profession].concat(Object.keys(st.flags).filter(f => st.flags[f])).forEach(key => {
+      const e = key && PE[key];
+      if (!e) return;
+      if (e.gain) for (const k in e.gain) eff.gain[k] = (eff.gain[k] || 1) * e.gain[k];
+      if (e.floor) for (const k in e.floor) eff.floor[k] = Math.max(eff.floor[k] || 0, e.floor[k]);
+    });
     return eff;
   };
 

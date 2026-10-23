@@ -17,8 +17,8 @@ LG.data.skills = {
   ]},
   business: { name: '商業', desc: '商業與經營的判斷力。提升財富成長，也提高創業與投資成功的機率。', kind: 'general', levels: [
     { pts: 2, name: '業務新手', effects: { gain: { wealth: 1.15 } } },
-    { pts: 4, name: '經營者',   effects: { floor: { wealth: 45 }, gain: { wealth: 1.2 } } },
-    { pts: 6, name: '企業家',   effects: { floor: { wealth: 65 }, flexCap: 10 } }
+    { pts: 4, name: '經營者',   effects: { floor: { wealth: 38 }, gain: { wealth: 1.15 } } },
+    { pts: 6, name: '企業家',   effects: { floor: { wealth: 52 }, flexCap: 10 } }
   ]},
   people: { name: '人際領導', desc: '溝通、領導與人脈經營。提升人際成長，在升遷與面試中更有優勢。', kind: 'general', levels: [
     { pts: 2, name: '好夥伴',   effects: { gain: { social: 1.2 } } },
